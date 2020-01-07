@@ -1,16 +1,26 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace app\Http\Controllers;
 
-use App\Note;
+use app\Note;
 use Illuminate\Http\Request;
 
-class NoteController extends Controller
+// $username = getFromSession('username');
+
+class NotesController extends Controller
 {
-	public function log()
+	public function index()
     {
-        return view('Auth.login');
+        // $notes = App\Note::incomplete();
+        $notes = app\Note::all();
+        return view('notes.index', compact('notes'));
+    }
+    public function show($id)
+    {
+        $note = app\Note::find($id);
+        return view('notes.show', compact('note'));
     }	
+
     // /**
     //  * Display a listing of the resource.
     //  *

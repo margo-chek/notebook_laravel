@@ -1,23 +1,23 @@
-@extends('note.app')
-  
-@section('content')
-<div class="container">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading"></div>
+<?php
+header('Content-Type: text/html; charset=utf-8');
+//require_once('inc/common.inc.php');
 
-				<div class="panel-body">
-					@if (session('status'))
-						<div class="alert alert-success">
-							{{ session('status') }}
-						</div>
-					@endif
-
-					You are logged in!
-				</div>
-			</div>
-		</div>
-	</div>
-</div>    
-@endsection
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="app.scss">
+        <title>Notebook</title>
+    </head>
+    <body>
+    
+        <div class="mainContainer">
+            <div class="title">Записная книжка</div>
+            <a href="login">
+                <button type="button" class="mainButton">Войти</button>
+            </a>
+        </div>
+   
+    </body>
+</html>
