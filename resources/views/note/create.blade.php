@@ -1,4 +1,5 @@
 @extends('note.main')
+
 @section('rightContainer')
 
 <div class="rightContainerCreate">

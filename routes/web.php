@@ -14,11 +14,10 @@
 // 	return view('welcome');
 // }
 
-Auth::routes();
-
 Route::get('/','UsersController@home'); //index
 Route::get('/login','UsersController@login'); // login
 Route::get('/register','UsersController@register');
-Route::get('/notebook','NotesController@main');
+Route::get('/main','NotesController@index');
 
 // Route::get('/home','HomeController@index')->name('home');
+Auth::routes();

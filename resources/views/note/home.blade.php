@@ -1,13 +1,8 @@
-<?php
-header('Content-Type: text/html; charset=utf-8');
-//require_once('inc/common.inc.php');
-
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="app.scss">
+        <link href="{{ asset('css/index.css') }}" rel="stylesheet">
         <title>Notebook</title>
     </head>
     <body>
