@@ -1,10 +1,10 @@
 @extends('note.main')
-@section('rightContainer')
 
+@section('rightContainer')
 <div class="rightContainerInfo">
     <div class="noteHeaderBlockInfo">
-        <div class="noteNameBlockInfo">Note 3</div>
-        <div class="noteDateBlockInfo">02.10.2019</div>
+        <div class="noteNameBlockInfo">{{ $note->note_name }}</div>
+        <div class="noteDateBlockInfo">{{ $note->use_date }}</div>
     </div>
     <div class="infoBlockInfo">Some note text here!</div>
 </div>

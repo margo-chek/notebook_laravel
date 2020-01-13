@@ -14,10 +14,14 @@
 // 	return view('welcome');
 // }
 
-Route::get('/','UsersController@home'); //index
+Route::get('/','UsersController@home'); //index - стартовая
 Route::get('/login','UsersController@login'); // login
-Route::get('/register','UsersController@register');
-Route::get('/main','NotesController@index');
+Route::get('/register','UsersController@register'); // register
+Route::get('/main','NotesController@index'); // main - главная
+Route::get("/note/create", "NotesController@create"); // /note/create
+Route::get("/note/edit/{note}", "NotesController@edit"); // /note/edit/1
+Route::get("/note/show/{note}", "NotesController@show"); // /note/show/1
 
+// Route::resource("notes", "NotesController")
 // Route::get('/home','HomeController@index')->name('home');
 Auth::routes();

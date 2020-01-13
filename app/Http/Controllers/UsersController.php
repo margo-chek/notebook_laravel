@@ -17,6 +17,11 @@ class UsersController extends Controller
         return view('note.login');
     }
 
+    public function register()
+    {
+        return view('note.register');
+    }
+
     /**
      * Display a listing of the resource.
      *

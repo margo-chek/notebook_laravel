@@ -8,13 +8,15 @@
             <div class="searchIcon"></div>
         </div>
         <div class="listOfNotesBlock">
-            @foreach (Note::resultsNoteOfListSelect($username) as $item)
+            @foreach ($notes as $item)
                 <div class="noteItemBlock visible">
-                    <div class="noteItemName searchName">{{ $item[note_name] }}</div>
-                    <div class="noteItemDate">{{ date("d.m.Y", strtotime(view($item[use_date]))}}</div>
+                    <div class="noteItemName searchName">{{ $item["note_name"] }}</div>
+                    <div class="noteItemDate">{{ $item["use_date"]}}</div>
                     <div class="noteItemActions">
-                        <button class="editIcon" onclick="showNote(event, {{ $item[id_note]}})"></button>
-                        <button class="deleteIcon" onclick="deleteNote(event, {{ $item[id_note]}})"></button>
+                    <!-- a class="editIcon" href="/note/edit/{{ $item["id"] }} -->
+                    <!-- a class="deleteIcon" href="/note/delete -->
+                        <button class="editIcon" onclick="showNote(event, {{ $item["id"] }})"></button>
+                        <button class="deleteIcon" onclick="deleteNote(event, {{ $item["id"] }})"></button>
                     </div>
                 </div>
             @endforeach
@@ -28,5 +30,5 @@
     <div class="betweenContainer"></div>
     @yield('rightContainer')
 </div>
-<div class="output">{{ $error }}</div>
+<div class="output">{{ print_r($errors) }}</div>
 @endsection

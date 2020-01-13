@@ -8,7 +8,6 @@
     </div>
     <form id=form action="{{url ('note')}}" class="formBlock" method="post">
         {{csrf_field()}}
-        {{method_field('SEND')}}
         <input placeholder="Note 3" class="noteNameBlockEdit inputForm" name="inputNoteName" type="text" required>
         <input placeholder="02.10.2019" class="noteDateBlockEdit inputForm" name="inputNoteDate" type="date" required>
         <textarea placeholder="Line 1" class="infoBlockEdit inputForm" name="inputNoteContent" required></textarea>

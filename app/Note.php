@@ -1,6 +1,6 @@
 <?php
 
-namespace app;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,13 +10,14 @@ class Note extends Model //class NoteDatabase extends Database
     // 	return static::where('comleted', 0)->get();
     // }
 
+    public $timestamps = false;
+
+    protected $fillable = [
+        'note_name', 'username', 'use_date', 'content',
+    ];
 
 }
 
-
-
-
-//
 //private static function checkingUniquenessOfLastNote($inputNoteName, $username, $inputNoteDate, $inputNoteContent) {
 //    $resource = self::query("SELECT note_name, username, use_date, content
 //        FROM note ORDER BY id_note DESC LIMIT 1");

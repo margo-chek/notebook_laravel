@@ -11,26 +11,44 @@ class NotesController extends Controller
 {
     public function index()
     {
-        // $notes = App\Note::all();
+        // $notes = \App\Note::all();
         // return view('notes.index', compact('notes'));
-        return view('notes.index');
+        return view('note.main', [
+            "notes" => Note::all()
+        ]); // /resources/views/note/main.blade.php
     }
 
-    public function show($id)
+    public function show(Note $note)
     {
-        // $note = App\Note::find($id);
+        // $note = Note::find($id);
         // return view('notes.show', compact('note'));
-        return view('notes.show');
+        return view('note.show', [
+            "note" => $note
+        ]);
     }	
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'note_name' => 'required',
+            'use_date' => 'required',
+            'conten' => 'required',
+        ]);
+  
+        Note::create($request->all());
+   
+        return redirect()->route('note.index')
+                        ->with('success','Note created successfully.');
+    }
 
     public function create()
     {
-        return view('notes.create');
+        return view('note.create');
     }
 
     public function edit(Note $note)
     {
-        return view('notes.edit',compact('note'));
+        return view('note.edit', compact('note'));
     }
 
     public function update(Request $request, Note $note)
@@ -43,15 +61,15 @@ class NotesController extends Controller
   
         $note->update($request->all());
   
-        return redirect()->route('notes.index')
+        return redirect()->route('note.index')
                         ->with('success','Note updated successfully');
     }
   
     public function destroy(Note $note)
     {
-        $note->delete();
+        $note->delete(); //forceDelete
   
-        return redirect()->route('notes.index')
+        return redirect()->route('note.index')
                         ->with('success','Note deleted successfully');
     }
 
