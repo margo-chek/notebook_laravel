@@ -170,6 +170,7 @@ html, body {
 .buttonBlock {
     display: flex;
     justify-content: center;
+    text-decoration: none !important;
 }
 
 .buttonAddNote {
