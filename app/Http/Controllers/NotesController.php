@@ -43,7 +43,9 @@ class NotesController extends Controller
 
     public function create()
     {
-        return view('note.create');
+        return view('note.create', [
+            "notes" => Note::all()
+        ]);
     }
 
     public function edit(Note $note)
@@ -67,10 +69,13 @@ class NotesController extends Controller
   
     public function destroy(Note $note)
     {
-        $note->delete(); //forceDelete
-  
-        return redirect()->route('note.index')
-                        ->with('success','Note deleted successfully');
+        $note->forceDelete(); //delete
+
+        return redirect('/note');
+        // return redirect()->route('note.main',[
+        //     "notes" => Note::all()
+        // ])
+        //                 ->with('success','Note deleted successfully');
     }
 
 	// public function index()

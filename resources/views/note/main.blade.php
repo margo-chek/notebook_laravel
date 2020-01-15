@@ -9,23 +9,27 @@
         </div>
         <div class="listOfNotesBlock">
             @foreach ($notes as $item)
-                <div class="noteItemBlock visible">
-                    <div class="noteItemName searchName">{{ $item["note_name"] }}</div>
-                    <div class="noteItemDate">{{ $item["use_date"]}}</div>
-                    <div class="noteItemActions">
-                    <!-- a class="editIcon" href="/note/edit/{{ $item["id"] }} -->
-                    <!-- a class="deleteIcon" href="/note/delete -->
-                        <button class="editIcon" onclick="showNote(event, {{ $item["id"] }})"></button>
-                        <button class="deleteIcon" onclick="deleteNote(event, {{ $item["id"] }})"></button>
+                @if ($item["username"] == Auth::user()->username)
+                    <div class="noteItemBlock visible">
+                        <a class="noteItemBlockA" href="note/show/{{ $item["id"] }}">
+                            <div class="noteItemName searchName">{{ $item["note_name"] }}</div>
+                            <div class="noteItemDate">{{ $item["use_date"]}}</div>
+                        </a>
+                        <div class="noteItemActions">
+                        <!-- a class="editIcon" href="/note/edit/{{ $item["id"] }} -->
+                        <!-- a class="deleteIcon" href="/note/delete -->
+                            <a class="editIcon" href="note/edit/{{ $item["id"] }}"></a>
+                            <a class="deleteIcon" href="note/delete/{{ $item["id"] }}"></a>
+                        </div>
                     </div>
-                </div>
+                @endif
             @endforeach
         </div>
-        <div class="buttonBlock">
-            <button type="button" class="buttonAddNote" name="buttonAddNote" onclick="addNewNote()">
+        <a class="buttonBlock" href="{{url ('note/create')}}">
+            <button type="button" class="buttonAddNote" name="buttonAddNote">
                 Add new note
             </button>
-        </div>
+        </a>
     </div>
     <div class="betweenContainer"></div>
     @yield('rightContainer')

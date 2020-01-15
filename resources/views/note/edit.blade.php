@@ -11,8 +11,8 @@
         <input placeholder="02.10.2019" class="noteDateBlockEdit editDate inputForm" name="inputNoteDate" type="date" required>
         <textarea placeholder="Line 1" class="infoBlockEdit editContent inputForm" name="inputNoteContent" required></textarea>
         <div class="buttonBlock">
-            <button class="buttonCancel" onclick="onClose()">Cancel</button>
-            <input class="buttonSave" type="submit" name="buttonSaveChanges" onclick="sendChanges(event)" value="Save changes"/>
+            <a class="buttonCancel" href="{{url ('note')}}">Cancel</a>
+            <a class="buttonSave" type="submit" name="buttonSaveChanges" href="{{url ('note/edit/{note}/update')}}">Save changes</a>
         </div>
     </form>
 </div>

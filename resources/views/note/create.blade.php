@@ -1,7 +1,6 @@
 @extends('note.main')
 
 @section('rightContainer')
-
 <div class="rightContainerCreate">
     <div class="noteHeaderBlockCreate">
         <span class="noteEditBlock">Create mode</span>

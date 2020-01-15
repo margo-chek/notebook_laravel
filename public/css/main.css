@@ -98,7 +98,7 @@ html, body {
     height: 27px;
     width: 30px;
     margin-top: 3px;
-    background: url("../image/icons8-search-32.png") no-repeat;
+    background: url("../icons8-search-32.png") no-repeat;
     background-size: 80% auto;
 }
 
@@ -121,6 +121,14 @@ html, body {
     flex-direction: row;
     max-height: 32px;
     max-width: 100%;
+}
+
+.noteItemBlockA{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    max-height: 32px;
+    max-width: 100%; 
 }
 
 .noteItemName {
@@ -150,12 +158,12 @@ html, body {
 }
 
 .editIcon {
-    background: url("../image/icons8_edit_32.png") no-repeat;
+    background: url("../icons8_edit_32.png") no-repeat;
     background-size: 80% auto;
 }
 
 .deleteIcon {
-    background: url("../image/icons8_delete_32.png") no-repeat;
+    background: url("../icons8_delete_32.png") no-repeat;
     background-size: 80% auto;
 }
 
