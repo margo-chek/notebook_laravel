@@ -13,7 +13,7 @@
                     <div class="noteItemBlock visible">
                         <a class="noteItemBlockA" href="/note/show/{{ $item["id"] }}">
                             <div class="noteItemName searchName">{{ $item["note_name"] }}</div>
-                            <div class="noteItemDate">{{ $item["use_date"]}}</div>
+                            <div class="noteItemDate">{{ date("d.m.Y", strtotime($item["use_date"])) }}</div>
                         </a>
                         <div class="noteItemActions">
                             <a class="editIcon" href="/note/edit/{{ $item["id"] }}"></a>
