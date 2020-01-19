@@ -11,7 +11,7 @@
             @foreach ($notes as $item)
                 @if ($item["username"] == Auth::user()->username)
                     <div class="noteItemBlock visible">
-                        <a class="noteItemBlockA" href="/note/show/{{ $item["id"] }}">
+                        <a class="noteItemBlockInfo" href="/note/show/{{ $item["id"] }}">
                             <div class="noteItemName searchName">{{ $item["note_name"] }}</div>
                             <div class="noteItemDate">{{ date("d.m.Y", strtotime($item["use_date"])) }}</div>
                         </a>
