@@ -8,9 +8,7 @@
     <body>
         <div class="mainContainer">
             <div class="title">Записная книжка</div>
-            <a href="login">
-                <button type="button" class="mainButton">Войти</button>
-            </a>
+            <a href="{{url ('log')}}" type="button" class="mainButton">Войти</a>
         </div>
     </body>
 </html>

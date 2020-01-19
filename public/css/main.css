@@ -22,7 +22,7 @@ html, body {
     min-height: 100%;
     text-align: center;
     font-family: "Georgia";
-    font-size: 19px;
+    font-size: 18px;
     line-height: 32px;
 }
 
@@ -188,11 +188,6 @@ html, body {
     border-radius: 19px;
 }
 
-.buttonAddNote:hover {
-    cursor: pointer;
-    background-color: #0055ff;
-}
-
 .betweenContainer {
     display: flex;
     width: 2%;
@@ -204,7 +199,7 @@ html, body {
 .rightContainerInfo,
 .rightContainerCreate,
 .rightContainerEdit {
-    display: none;
+    display: flex;
     flex-direction: column;
     width: 100%;
     background-color: antiquewhite;
@@ -319,13 +314,22 @@ html, body {
     border-radius: 19px;
 }
 
-.buttonSave:hover {
+button:hover,
+.buttonAddNote:hover,
+.buttonSave:hover,
+.buttonCancel:hover {
     cursor: pointer;
+    color: antiquewhite;
+    text-decoration: none;
     background-color: #0055ff;
 }
 
 .buttonCancel {
     background-color: #ff7640;
+}
+
+.buttonCancel:hover {
+    background-color: #ff7679;
 }
 
 .output {
@@ -337,9 +341,13 @@ html, body {
 .footer {
     display: flex;
     justify-content: center;
-    padding-top: 28px;
 }
 
-button:hover {
-   cursor: pointer;
+button {
+   text-decoration: none;
+   color: #fff;
+}
+
+.navbar {
+    margin-bottom: 0;
 }

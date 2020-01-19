@@ -7,11 +7,11 @@
     </div>
     <form id=form action="{{url ('note')}}" class="formBlock" method="post">
         {{csrf_field()}}
-        <input placeholder="Note 3" class="noteNameBlockEdit inputForm" name="inputNoteName" type="text" required>
-        <input placeholder="02.10.2019" class="noteDateBlockEdit inputForm" name="inputNoteDate" type="date" required>
-        <textarea placeholder="Line 1" class="infoBlockEdit inputForm" name="inputNoteContent" required></textarea>
+        <input placeholder="Note 3" class="noteNameBlockEdit inputForm" name="note_name" type="text" required>
+        <input placeholder="02.10.2019" class="noteDateBlockEdit inputForm" name="use_date" type="date" required>
+        <textarea placeholder="Line 1" class="infoBlockEdit inputForm" name="content" required></textarea>
         <div class="buttonBlock">
-            <input class="buttonSave" type="submit" name="buttonSave" onclick="send(event)" value="Save"/>
+            <a href="{{url ('note/create/new')}}" class="buttonSave" type="submit" name="buttonSave" >Save</a>
         </div>
     </form>
 </div>

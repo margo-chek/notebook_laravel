@@ -18,7 +18,6 @@ html, body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    // height:100vh;
     height: 100%;
     overflow: hidden;
     background: url("../image/white.jpg") no-repeat center;

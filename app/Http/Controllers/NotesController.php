@@ -21,10 +21,12 @@ class NotesController extends Controller
     public function show(Note $note)
     {
         // $note = Note::find($id);
-        // return view('notes.show', compact('note'));
-        return view('note.show', [
-            "note" => $note
+        return view('note.show', compact('note'), [
+            "notes" => Note::all()
         ]);
+        // return view('note.show', [
+        //     // "note" => $note
+        // ]);
     }	
 
     public function store(Request $request)
@@ -32,13 +34,12 @@ class NotesController extends Controller
         $request->validate([
             'note_name' => 'required',
             'use_date' => 'required',
-            'conten' => 'required',
+            'content' => 'required',
         ]);
   
         Note::create($request->all());
    
-        return redirect()->route('note.index')
-                        ->with('success','Note created successfully.');
+        return redirect('/note');
     }
 
     public function create()
@@ -50,7 +51,9 @@ class NotesController extends Controller
 
     public function edit(Note $note)
     {
-        return view('note.edit', compact('note'));
+        return view('note.edit', compact('note'), [
+            "notes" => Note::all()
+        ]);
     }
 
     public function update(Request $request, Note $note)
@@ -58,13 +61,15 @@ class NotesController extends Controller
         $request->validate([
             'note_name' => 'required',
             'use_date' => 'required',
-            'conten' => 'required',
+            'content' => 'required',
         ]);
   
         $note->update($request->all());
   
-        return redirect()->route('note.index')
-                        ->with('success','Note updated successfully');
+        return redirect()->route('note.index', [
+            "notes" => Note::all()
+        ])
+            ->with('success','Note updated successfully');
     }
   
     public function destroy(Note $note)

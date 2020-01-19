@@ -14,12 +14,12 @@ class UsersController extends Controller
 
     public function login()
     {
-        return view('note.login');
+        return view('auth.login');
     }
 
     public function register()
     {
-        return view('note.register');
+        return view('auth.register');
     }
 
     /**

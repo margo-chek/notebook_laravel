@@ -15,7 +15,7 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="mainContainer">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -75,6 +75,7 @@
         </nav>
 
         @yield('content')
+        <div class="header footer">Copyright by ..., 2019</div>
     </div>
 
     <!-- Scripts -->
