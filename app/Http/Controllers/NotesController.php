@@ -33,6 +33,7 @@ class NotesController extends Controller
     {
         $request->validate([
             'note_name' => 'required',
+            'username' => 'required',
             'use_date' => 'required',
             'content' => 'required',
         ]);
@@ -60,6 +61,7 @@ class NotesController extends Controller
     {
         $request->validate([
             'note_name' => 'required',
+            'username' => 'required',
             'use_date' => 'required',
             'content' => 'required',
         ]);

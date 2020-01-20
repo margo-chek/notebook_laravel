@@ -19,11 +19,11 @@ Route::get('/log','UsersController@login');
 Route::get('/register','UsersController@register'); // register
 Route::get('/note','NotesController@index'); // main - главная // any
 Route::get("/note/create", "NotesController@create"); // /note/create // put
-Route::get("/note/create/new", "NotesController@store");
+Route::post("/note/create/new", "NotesController@store"); // post
 Route::get("/note/edit/{note}", "NotesController@edit"); // /note/edit/1
 Route::get("/note/show/{note}", "NotesController@show"); // /note/show/1
 Route::get("/note/delete/{note}", "NotesController@destroy"); //delete
-Route::post("/note/edit/{note}", "NotesController@update"); // там вроде два параметра
+Route::put("/note/edit/{note}", "NotesController@update"); // put
 
 // Route::put("////", "C@M")
 

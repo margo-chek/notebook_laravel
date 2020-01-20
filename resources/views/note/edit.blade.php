@@ -7,6 +7,7 @@
     </div>
     <form id=form action="{{url ('note')}}" class="formBlock" method="post">
         {{csrf_field()}}
+        @method('PUT')
         <input placeholder="Note 3" class="noteNameBlockEdit editName inputForm" name="inputNoteName" type="text" required value="{{ $note->note_name }}">
         <input placeholder="02.10.2019" class="noteDateBlockEdit editDate inputForm" name="inputNoteDate" type="date" required value="{{ $note->use_date }}">
         <textarea placeholder="Line 1" class="infoBlockEdit editContent inputForm" name="inputNoteContent" required>{{ $note->content }}</textarea>
