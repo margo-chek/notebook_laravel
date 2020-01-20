@@ -23,8 +23,7 @@ Route::post("/note/create/new", "NotesController@store"); // post
 Route::get("/note/edit/{note}", "NotesController@edit"); // /note/edit/1
 Route::get("/note/show/{note}", "NotesController@show"); // /note/show/1
 Route::get("/note/delete/{note}", "NotesController@destroy"); //delete
-Route::put("/note/edit/{note}", "NotesController@update"); // put
-
+Route::put("/note/edit/it/{note}", "NotesController@update"); // put
 // Route::put("////", "C@M")
 
 // Route::resource("notes", "NotesController")

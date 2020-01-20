@@ -31,12 +31,13 @@ class NotesController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'note_name' => 'required',
-            'username' => 'required',
-            'use_date' => 'required',
-            'content' => 'required',
-        ]);
+        // dd($request);
+        // $request->validate([
+        //     'note_name' => 'required',
+        //     'username' => 'required',
+        //     'use_date' => 'required',
+        //     'content' => 'required',
+        // ]);
   
         Note::create($request->all());
    
@@ -59,19 +60,16 @@ class NotesController extends Controller
 
     public function update(Request $request, Note $note)
     {
-        $request->validate([
-            'note_name' => 'required',
-            'username' => 'required',
-            'use_date' => 'required',
-            'content' => 'required',
-        ]);
-  
+        // die("TEST");
+        // $request->validate([
+        //     'note_name' => 'required',
+        //     'username' => 'required',
+        //     'use_date' => 'required',
+        //     'content' => 'required',
+        // ]);
         $note->update($request->all());
   
-        return redirect()->route('note.index', [
-            "notes" => Note::all()
-        ])
-            ->with('success','Note updated successfully');
+        return redirect('/note');
     }
   
     public function destroy(Note $note)
