@@ -60,7 +60,9 @@ class NotesController extends Controller
 
     public function update(Request $request, Note $note)
     {
-        // die("TEST");
+        // dd($request->all()); // убедиться, что данные приходят
+        // dd($note->toArray()); // убедиться, что данные из базы загружаются
+        // die("TEST"); // проверяем, что в функцию заходит
         // $request->validate([
         //     'note_name' => 'required',
         //     'username' => 'required',
