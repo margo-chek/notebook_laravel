@@ -38,9 +38,9 @@ class NotesController extends Controller
         //     'use_date' => 'required',
         //     'content' => 'required',
         // ]);
-  
+
         Note::create($request->all());
-   
+
         return redirect('/note');
     }
 
@@ -69,11 +69,12 @@ class NotesController extends Controller
         //     'use_date' => 'required',
         //     'content' => 'required',
         // ]);
+        
         $note->update($request->all());
-  
+
         return redirect('/note');
     }
-  
+
     public function destroy(Note $note)
     {
         $note->forceDelete(); //delete
@@ -85,7 +86,7 @@ class NotesController extends Controller
         //                 ->with('success','Note deleted successfully');
     }
 
-	// public function index()
+    // public function index()
     // {
     //     // // $notes = App\Note::incomplete();
     //     // $notes = App\Note::all();
@@ -165,4 +166,3 @@ class NotesController extends Controller
     //     //
     // }
 }
- 

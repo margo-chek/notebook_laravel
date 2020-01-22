@@ -10,11 +10,11 @@
         {{ method_field('PUT') }}
         <input type="hidden" name="username" value="{{Auth::user()->username}}" />
         <input placeholder="Note 3" class="noteNameBlockEdit editName inputForm"
-            name="inputNoteName" type="text" required value="{{ $note->note_name }}">
+            name="note_name" type="text" required value="{{ $note->note_name }}">
         <input placeholder="02.10.2019" class="noteDateBlockEdit editDate inputForm"
-            name="inputNoteDate" type="date" required value="{{ $note->use_date }}">
+            name="use_date" type="date" required value="{{ $note->use_date }}">
         <textarea placeholder="Line 1" class="infoBlockEdit editContent inputForm"
-            name="inputNoteContent" required>{{ $note->content }}</textarea>
+            name="content" required>{{ $note->content }}</textarea>
         <div class="buttonBlock">
             <a class="buttonCancel" href="{{url ('note')}}">Cancel</a>
             <button class="buttonSave" type="submit" name="buttonSaveChanges">Save changes</button>

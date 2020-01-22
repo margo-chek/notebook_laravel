@@ -30,6 +30,7 @@
         </a>
     </div>
     <div class="betweenContainer"></div>
+
     @yield('rightContainer')
 </div>
 @endsection
