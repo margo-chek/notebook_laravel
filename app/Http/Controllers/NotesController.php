@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class NotesController extends Controller
 {
+    public function loadNotes() {
+        return Note::all();
+    }
     public function index()
     {
         return view('note.main', [

@@ -26,6 +26,8 @@ Route::get("/note/delete/{note}", "NotesController@destroy"); //delete
 Route::put("/note/edit/it/{note}", "NotesController@update"); // put
 // Route::put("////", "C@M")
 
+Route::get("/notes", "NotesController@load_notes")
+
 // Route::resource("notes", "NotesController")
 // Route::get('/home','HomeController@index')->name('home');
 
